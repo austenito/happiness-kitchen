@@ -8,7 +8,12 @@
       "http_gzip_static_module"
     ]
   },
+  "postgresql": {
+    "password" : { "postgres": "foo" },
+    "version" : "9.3"
+  },
   "run_list": [
-    "recipe[nginx::source]"
+    "recipe[nginx::source]",
+    "recipe[postgresql::server]"
   ]
 }
