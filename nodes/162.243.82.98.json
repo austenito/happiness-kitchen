@@ -13,7 +13,9 @@
     "version" : "9.3"
   },
   "run_list": [
-    "recipe[nginx::source]",
-    "recipe[postgresql::server]"
+    // "recipe[nginx::source]",
+    // "recipe[postgresql::server]",
+    "recipe[docker]",
+    "recipe[chef-docker-happiness-service]"
   ]
 }

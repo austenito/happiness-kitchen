@@ -2,3 +2,4 @@ Gemfile.lock
 /cookbooks/
 /tmp/librarian/
 .vagrant/*
+.DS_Store
