@@ -1,21 +1,7 @@
 {
- "nginx": {
-    "version": "1.2.5",
-    "init_style": "init",
-    "modules": [
-      "http_stub_status_module",
-      "http_ssl_module",
-      "http_gzip_static_module"
-    ]
-  },
-  "postgresql": {
-    "password" : { "postgres": "foo" },
-    "version" : "9.3"
-  },
   "run_list": [
-    // "recipe[nginx::source]",
-    // "recipe[postgresql::server]",
     "recipe[docker]",
-    "recipe[chef-docker-happiness-service]"
+    "recipe[chef-docker-happiness::postgres]"
+    // "recipe[chef-docker-happiness::happiness-service]"
   ]
 }
