@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
 # Add VOLUMEs to allow backup of config, logs and databases
-VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+VOLUME  ["/pgdata"]
 
 CMD /bin/bash
