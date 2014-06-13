@@ -17,32 +17,16 @@ RUN apt-get update
 RUN apt-get -y -q install python-software-properties software-properties-common
 RUN apt-get -y -q install postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
 
-RUN "/usr/lib/postgresql/9.3/bin/initdb /pgdata"
-# Note: The official Debian and Ubuntu images automatically ``apt-get clean``
-# after each ``apt-get``
 
-# Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
-USER postgres
+ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.conf
+RUN chown postgres /etc/postgresql/9.3/main/postgresql.conf
 
-# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
-# then create a database `docker` owned by the ``docker`` role.
-# Note: here we use ``&&\`` to run commands one after the other - the ``\``
-#       allows the RUN command to span multiple lines.
-RUN    /etc/init.d/postgresql start &&\
-       psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
-       createdb -O docker docker
+ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/postgres/pg_hba.conf /etc/postgresql/9.3/main/pg_hba.conf
+RUN chown postgres /etc/postgresql/9.3/main/pg_hba.conf
 
-# Adjust PostgreSQL configuration so that remote connections to the
-# database are possible. 
-RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
+ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/postgres/run /usr/local/bin/run
+RUN chmod +x /usr/local/bin/run
 
-# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
-RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
-
-# Expose the PostgreSQL port
+VOLUME ["/pgdata"]
 EXPOSE 5432
-
-VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
-
-# Set the default command to run when starting the container
-CMD ["/usr/lib/postgresql/9.3/bin/postgres", "-D", "/var/lib/postgresql/9.3/main", "-c", "config_file=/etc/postgresql/9.3/main/postgresql.conf", "--data-directory", "/pgdata"]
+CMD ["/usr/local/bin/run"]
