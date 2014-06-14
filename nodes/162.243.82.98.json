@@ -1,7 +1,7 @@
 {
   "run_list": [
     "recipe[docker]",
-    // "recipe[chef-docker-happiness::postgres]"
+    "recipe[chef-docker-happiness::postgres]",
     "recipe[chef-docker-happiness::happiness-service]"
   ]
 }
