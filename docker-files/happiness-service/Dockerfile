@@ -17,7 +17,6 @@ RUN make install
 RUN bash -c 'source /usr/local/share/chruby/chruby.sh'
 RUN cp /usr/local/share/chruby/chruby.sh /etc/profile.d/chruby.sh
 
-# RUN bash -c 'source /usr/local/share/chruby/chruby.sh; chruby 2.1.2; gem install bundler; bundle install'
 RUN bash -c 'source /usr/local/share/chruby/chruby.sh; chruby 2.1.2; gem install bundler'
 
 RUN mkdir /apps
