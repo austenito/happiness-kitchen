@@ -2,7 +2,7 @@
 
 source /usr/local/share/chruby/chruby.sh
 git clone https://github.com/austenito/happiness.git
-cd happiness_service
+cd happiness
 mkdir pids
 mkdir log
 chruby 2.1.2
