@@ -4,6 +4,7 @@
     "recipe[chef-docker-happiness::ruby-2.1.2]",
     "recipe[chef-docker-happiness::postgres]",
     "recipe[chef-docker-happiness::happiness-service]",
-    "recipe[chef-docker-happiness::happiness]"
+    "recipe[chef-docker-happiness::happiness]",
+    "recipe[chef-docker-happiness::happiness-service-console]"
   ]
 }
