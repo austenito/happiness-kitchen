@@ -5,5 +5,4 @@ WORKDIR /apps
 
 ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/happiness-service-console/run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
-RUN /usr/local/bin/run.sh
-CMD source /usr/local/share/chruby/chruby.sh && /bin/bash
+ENTRYPOINT source /usr/local/share/chruby/chruby.sh && /bin/bash
