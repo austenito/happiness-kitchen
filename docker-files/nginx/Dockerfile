@@ -18,7 +18,7 @@ RUN apt-get install -y nginx
 RUN rm -v /etc/nginx/nginx.conf
 
 # Copy a configuration file from the current directory
-ADD nginx.conf /etc/nginx/
+ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/nginx/nginx.conf /etc/nginx/
 
 # Append "daemon off;" to the beginning of the configuration
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
