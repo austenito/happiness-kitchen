@@ -1,7 +1,5 @@
 from ubuntu:ruby-2.1.2
 
-# Install Nginx
-
 # Add application repository URL to the default sources
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
 
@@ -26,6 +24,4 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 # Expose ports
 EXPOSE 80
 
-# Set the default command to execute
-# when creating a new container
-CMD service nginx start
+CMD usr/sbin/nginx -c /etc/nginx/nginx.conf
