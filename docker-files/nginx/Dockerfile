@@ -24,4 +24,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 # Expose ports
 EXPOSE 80
 
-CMD usr/sbin/nginx -c /etc/nginx/nginx.conf
+ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/nginx/run.sh /usr/local/bin/run.sh
+RUN chmod +x /usr/local/bin/run.sh
+CMD ["/usr/local/bin/run.sh"]
