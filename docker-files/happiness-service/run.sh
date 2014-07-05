@@ -9,7 +9,8 @@ chruby 2.1.2
 bundle install --without development test
 
 export HAPPINESS_SERVICE_IP=`ifconfig eth0 | grep 'inet ' | awk -F'[: ]+' '{ print $4 }'`
-sed -i "s/DEFAULT_HOST_URL/${HAPPINESS_SERVICE_IP}:3000/" config/environments/production.rb
+sed -i "s/DEFAULT_HOST_URL/${HAPPINESS_SERVICE_IP}/" app/controllers/application_controller.rb
+sed -i "s/DEFAULT_HOST_PORT/3000/" app/controllers/application_controller.rb
 
 bundle exec rake db:create db:migrate db:seed RAILS_ENV=production
 bundle exec rake assets:precompile RAILS_ENV=production
