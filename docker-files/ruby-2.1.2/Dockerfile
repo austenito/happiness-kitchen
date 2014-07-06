@@ -1,4 +1,4 @@
-from ubuntu:14.04
+from austenito:ruby-2.1.2
 
 # development tools
 run apt-get update
