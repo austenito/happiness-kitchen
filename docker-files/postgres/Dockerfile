@@ -27,6 +27,6 @@ RUN chown postgres /etc/postgresql/9.3/main/pg_hba.conf
 ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/postgres/run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
 
-VOLUME ["/pgdata"]
+VOLUME ["/config"]
 EXPOSE 5432
 CMD ["/usr/local/bin/run"]
