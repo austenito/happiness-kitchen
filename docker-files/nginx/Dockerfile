@@ -1,4 +1,4 @@
-from austenito:ruby-2.1.2
+from austenito/ruby-2.1.2
 
 # Add application repository URL to the default sources
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list

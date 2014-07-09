@@ -1,4 +1,4 @@
-from austenito:ruby-2.1.2
+from austenito/ruby-2.1.2
 
 RUN apt-get update
 RUN apt-get install -qy nodejs
