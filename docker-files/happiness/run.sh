@@ -1,6 +1,8 @@
 #!/bin/bash
 
 source /usr/local/share/chruby/chruby.sh
+mkdir /apps
+cd /apps
 git clone https://github.com/austenito/happiness.git
 cd happiness
 mkdir pids
