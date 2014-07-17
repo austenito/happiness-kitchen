@@ -88,7 +88,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
-  VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('nodes', '162.243.82.98.json').read)
+  VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('nodes', 'development.json').read)
 
   config.vm.provision :chef_solo do |chef|
      chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
