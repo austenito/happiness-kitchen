@@ -6,7 +6,7 @@ mkdir /apps
 cd /apps
 git clone https://github.com/austenito/happiness.git
 cd happiness
-export GEM_HOME=/gems/ruby/$RUBY_VERSION
+export GEM_HOME=/gems/ruby/2.1.2
 mkdir pids
 mkdir log
 chruby 2.1.2

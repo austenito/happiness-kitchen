@@ -7,7 +7,7 @@ cd /apps
 
 git clone https://github.com/austenito/happiness_service.git
 cd happiness_service
-export GEM_HOME=/gems/ruby/$RUBY_VERSION
+export GEM_HOME=/gems/ruby/2.1.2
 mkdir pids
 mkdir log
 chruby 2.1.2
