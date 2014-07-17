@@ -7,6 +7,6 @@ ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-
 RUN chmod +x /config/happiness/run.sh
 
 # Add VOLUMEs to allow backup of config, logs and databases
-VOLUME  ["/pgdata", "/config", "/apps"]
+VOLUME  ["/pgdata", "/config", "/gems"]
 
 CMD /bin/bash

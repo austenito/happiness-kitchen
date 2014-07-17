@@ -1,9 +1,12 @@
 #!/bin/bash
 
 source /usr/local/share/chruby/chruby.sh
+
+mkdir /apps
 cd /apps
 git clone https://github.com/austenito/happiness.git
 cd happiness
+export GEM_HOME=/gems/ruby/$RUBY_VERSION
 mkdir pids
 mkdir log
 chruby 2.1.2
