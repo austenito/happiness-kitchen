@@ -1,8 +1,5 @@
 from austenito/ruby-2.1.2
 
-# Add application repository URL to the default sources
-RUN echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
-
 # Update the repository
 RUN apt-get update
 
@@ -14,9 +11,6 @@ RUN apt-get install -y nginx
 
 # Remove the default Nginx configuration file
 RUN rm -v /etc/nginx/nginx.conf
-
-# Copy a configuration file from the current directory
-ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/nginx/nginx.conf /etc/nginx/
 
 # Expose ports
 EXPOSE 80

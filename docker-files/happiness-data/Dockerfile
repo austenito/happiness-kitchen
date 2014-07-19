@@ -6,6 +6,12 @@ RUN chmod +x /config/happiness-service/run.sh
 ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/happiness/run.sh /config/happiness/run.sh
 RUN chmod +x /config/happiness/run.sh
 
+ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/nginx/nginx.conf /config/nginx/
+
+RUN mkdir -p /log/nginx
+RUN mkdir -p /log/happiness
+RUN mkdir -p /log/happiness_service
+
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/pgdata", "/config", "/gems", "/log"]
 
