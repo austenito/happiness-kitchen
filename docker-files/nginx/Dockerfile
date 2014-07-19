@@ -15,6 +15,4 @@ RUN rm -v /etc/nginx/nginx.conf
 # Expose ports
 EXPOSE 80
 
-ADD https://raw.githubusercontent.com/austenito/happiness-kitchen/master/docker-files/nginx/run.sh /usr/local/bin/run.sh
-RUN chmod +x /usr/local/bin/run.sh
-CMD ["/usr/local/bin/run.sh"]
+CMD ["/config/nginx/run.sh"]
