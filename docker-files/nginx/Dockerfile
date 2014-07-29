@@ -1,4 +1,4 @@
-from austenito/ruby-2.1.2
+from ubuntu:14.04
 
 # Update the repository
 RUN apt-get update
