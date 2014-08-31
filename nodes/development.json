@@ -1,14 +1,17 @@
 {
-  "postgres" : {
-    "user" : "nyan",
-    "password" : "cat"
-  },
   "poptart": {
     "token" : "e12281b7412a007631588a79d73aa402da5aeeeba93ae76e951c781f733b1a05"
   },
+  "docker": {
+    "storage_driver": "devicemapper"
+  },
+  "postgresql" : {
+    "user" : "postgres",
+    "password" : "postgres"
+  },
   "logentries" : {
-    "happiness_service" : "2203a941-2270-4562-a3cd-4442e447cc57",
-    "happiness" : "2203a941-2270-4562-a3cd-4442e447cc57"
+    "happiness_service" : "",
+    "happiness" : ""
   },
   "run_list": [
     "recipe[docker]",
