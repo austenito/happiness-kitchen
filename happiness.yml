@@ -1,11 +1,7 @@
 windows:
+  - name: bash
+    root: ~/
   - name: happiness_service
     root: ~/
     panes:
-     - sudo docker start -i happiness_service_console
-  - name: application_logs
-    root: ~/
-    layout: even-horizontal
-    panes:
-     - sudo docker start -i log
-     - sudo docker start -i log
+      - sudo docker start -i hs-console
