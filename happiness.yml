@@ -1,6 +1,8 @@
 windows:
   - name: bash
     root: ~/
+    panes:
+     - bash
   - name: happiness_service
     root: ~/
     panes:
