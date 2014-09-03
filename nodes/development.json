@@ -15,10 +15,11 @@
   },
   "run_list": [
     "recipe[docker]",
-    "recipe[chef-docker-happiness::happiness-data]"
-    // "recipe[chef-docker-happiness::postgres]",
-    // "recipe[chef-docker-happiness::happiness-service]",
-    // "recipe[chef-docker-happiness::happiness]",
-    // "recipe[chef-docker-happiness::nginx]"
+    "recipe[chef-docker-happiness::happiness-data]",
+    "recipe[chef-docker-happiness::postgres]",
+    "recipe[chef-docker-happiness::happiness-service]",
+    "recipe[chef-docker-happiness::happiness]",
+    "recipe[chef-docker-happiness::nginx]",
+    "recipe[chef-docker-happiness::log]"
   ]
 }
