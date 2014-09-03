@@ -3,3 +3,5 @@ Gemfile.lock
 /tmp/librarian/
 .vagrant/*
 .DS_Store
+nodes/happinesslog.com.json
+.chef/knife.rb
