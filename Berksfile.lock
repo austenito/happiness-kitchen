@@ -1,7 +1,7 @@
 DEPENDENCIES
   chef-docker-happiness
     git: git@github.com:austenito/chef-docker-happiness.git
-    revision: 005b03fea883af1b6a66a83b0563e765c8ee4fa0
+    revision: f06587fa409e526a1fe6e954202601691f65984a
   docker
 
 GRAPH
