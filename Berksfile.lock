@@ -1,7 +1,7 @@
 DEPENDENCIES
   chef-docker-happiness
     git: git@github.com:austenito/chef-docker-happiness.git
-    revision: cb810e5b79794006245b761c6b78a82e2d8a1da1
+    revision: 005b03fea883af1b6a66a83b0563e765c8ee4fa0
   docker
 
 GRAPH
@@ -52,6 +52,6 @@ GRAPH
     ohai (>= 0.0.0)
   windows (1.34.2)
     chef_handler (>= 0.0.0)
-  yum (3.2.4)
-  yum-epel (0.4.0)
+  yum (3.3.1)
+  yum-epel (0.5.1)
     yum (~> 3.0)
